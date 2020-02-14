@@ -13,7 +13,7 @@ spec:
         name: spring-boot-example
     spec:
       containers:
-      - image: dockerhandson/spring-boot-example
+      - image: chandar19/spring-boot-example
         name: spring-boot-example
         ports:
         - name: spring-boot-example
