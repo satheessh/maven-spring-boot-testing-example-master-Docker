@@ -13,7 +13,7 @@ spec:
         name: sp-bt-ex
     spec:
       containers:
-      - image: chandar19/spring-boot-example
+      - image: chandar19/spring-boot-example:${GIT_COMMIT_HASH}
         name: sp-bt-ex
         ports:
         - name: sp-bt-ex
