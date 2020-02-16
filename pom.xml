@@ -3,20 +3,23 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>example.spring</groupId>
     <artifactId>maven-spring-boot-testing-example</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1-SNAPSHOT</version>
     <name>Maven Spring Boot Testing Example</name>
     <packaging>war</packaging>
     <properties>
         <target.jdk>1.7</target.jdk>
-        <surefire.version>2.19</surefire.version>
-        <tomcat.host.name>13.52.241.8</tomcat.host.name>
+       <!-- <surefire.version>2.19</surefire.version> -->
+     <surefire.version>3.0.0-M1</surefire.version>
+        <tomcat.host.name>localhost</tomcat.host.name>
+    <!--<tomcat.host.name>13.52.241.8</tomcat.host.name> -->
+    <!-- <my.tomcat.port>8080</my.tomcat.port> -->
         <tomcat.version>7.0.52</tomcat.version>
         <servlet-api.version>3.1.0</servlet-api.version>
         <start-class>example.spring.bootapp.Application</start-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>${target.jdk}</java.version>  
-	<sonar.host.url>http://52.53.183.74:9000/</sonar.host.url>
+    <sonar.host.url>http://52.53.183.74:9000/</sonar.host.url>
     </properties>
     <profiles>
         <profile>
@@ -37,7 +40,7 @@
                     </resource>
                 </resources>
                 <plugins>
-                    <plugin>
+            <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-report-plugin</artifactId>
                         <version>${surefire.version}</version>
@@ -104,7 +107,7 @@
                                 </goals>
                                 <configuration>
                                     <arguments>
-                                        <argument>--server.port=${tomcat.http.port}</argument>
+                                      <argument>--server.port=${tomcat.http.port}</argument>
                                     </arguments>
                                     <!-- <jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005</jvmArguments> -->
                                 </configuration>
@@ -249,7 +252,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
@@ -267,21 +270,21 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
         </plugins>
     </build>
-	<distributionManagement>
-	    <repository>
-	      <id>nexus</id>
-	      <name>Nexus Repository</name>
-	      <url>http://52.53.225.52:8081/repository/mt-releases/</url>
-	    </repository>
-	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>Snapshot Nexus Repository </name>
-	      <url>http://52.53.225.52:8081/repository/mt-snapshots/</url>
-	    </snapshotRepository>
-	</distributionManagement>
+    <distributionManagement>
+        <repository>
+          <id>nexus</id>
+          <name>Nexus Repository</name>
+          <url>http://52.53.225.52:8081/repository/mt-releases/</url>
+        </repository>
+        <snapshotRepository>
+          <id>nexus</id>
+          <name>Snapshot Nexus Repository </name>
+          <url>http://52.53.225.52:8081/repository/mt-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>

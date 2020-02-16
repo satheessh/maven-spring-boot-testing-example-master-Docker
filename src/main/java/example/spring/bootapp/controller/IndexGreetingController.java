@@ -15,7 +15,7 @@ public class IndexGreetingController
 	protected HashMap<String, String> displayIndexGreetingMessage()
     {
         HashMap<String, String> model = new HashMap<>();
-        String name = "Index Greeting V2";
+        String name = "Index Greeting";
         model.put("greeting", name);
         return model;
 	}
